@@ -3,6 +3,10 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 
+fetch(`http://localhost:3000/api/events/`)
+  .then(reponse => reponse.json())
+  .then((data) => console.table(data))
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
